@@ -1,0 +1,36 @@
+# Standard Python ignores
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+pythonenv*/
+venv*/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Image files
+*.jpg
+*.jpeg
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
