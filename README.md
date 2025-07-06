@@ -62,3 +62,43 @@ The project will involve data acquisition and processing, model development (CNN
 │   └── ...
 └── (Optional) app.py         # Streamlit or Flask app for demo
 ```
+
+
+# - INFERENCE
+Running Inference with inference.py
+This guide explains how to run the inference.py script to perform inference on a new image using a trained model.
+Prerequisites
+
+A trained model (e.g., ResNet18).
+An image to test.
+The project environment set up with required dependencies.
+
+Running the Script
+From your project's root directory, execute the inference.py script with the appropriate arguments. Below is an example command:
+```
+python inference.py \
+    --image_path "path/to/your/new_image.jpg" \
+    --model_path "./models/best_cnn_resnet18.pth" \
+    --model_type cnn \
+    --model_name resnet18 \
+    --image_size 224 224
+```
+
+Argument Descriptions
+```
+--image_path: Path to the image you want to infer on. Replace "path/to/your/new_image.jpg" with the actual image path.
+--model_path: Path to the trained model file (e.g., "./models/best_cnn_resnet18.pth"). Adjust if using a different model.
+--model_type: Type of model (e.g., cnn). Update if you trained a different model type.
+--model_name: Name of the model architecture (e.g., resnet18). Modify if you used a different architecture.
+--image_size: Image dimensions the model was trained on (default: 224 224).
+```
+
+Ensure `--image_size` matches the size used during model training.
+Output
+The script will:
+
+Print the prediction results to the console.
+Display a plot of the prediction probabilities.
+Show a Grad-CAM visualization to highlight important regions in the image.
+Save all results (predictions, plots, and visualizations) to the `./inference_results` directory by default.
+
