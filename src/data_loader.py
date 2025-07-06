@@ -13,9 +13,10 @@ class AlbumentationsTransform:
     def __init__(self, transform):
         self.transform = transform
 
-    def __call__(self, img_np): # Expects a NumPy array (HWC, RGB, uint8)
+    def __call__(self, image): # Expects a NumPy array (HWC, RGB, uint8)
         # Apply the Albumentations transform
-        return self.transform(image=img_np)['image']
+        # The 'image' keyword argument is used by Albumentations internally.
+        return self.transform(image=image)['image']
 
 
 def get_transforms(image_size=(224, 224)):
@@ -55,7 +56,7 @@ class ImageDataset(torch.utils.data.Dataset):
         image_np = np.array(image_pil)
 
         if self.transform:
-            image_tensor = self.transform(image_np) # Pass numpy array
+            image_tensor = self.transform(image=image_np) # Pass numpy array with keyword 'image'
         else:
             # If no transform, still need to convert to tensor and normalize if necessary
             # For simplicity, ensure transform is always applied

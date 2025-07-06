@@ -19,7 +19,7 @@ def main():
     parser.add_argument("--model_type", type=str, default="cnn", choices=["cnn", "vit"], help="Type of model to use (cnn or vit)")
     parser.add_argument("--model_name", type=str, default="resnet18", help="Specific model architecture name (e.g., resnet18, vit_base_patch16_224)")
     parser.add_argument("--batch_size", type=int, default=32, help="Batch size for training and evaluation")
-    parser.add_argument("--epochs", type=int, default=10, help="Number of training epochs")
+    parser.add_argument("--epochs", type=int, default=1, help="Number of training epochs")
     parser.add_argument("--lr", type=float, default=0.001, help="Learning rate")
     parser.add_argument("--image_size", type=int, nargs=2, default=[224, 224], help="Image size (height width)")
     parser.add_argument("--pretrained", type=bool, default=True, help="Use pretrained weights")
@@ -102,7 +102,7 @@ def main():
         # Or try: target_layers = [model.model.norm]
 
     try:
-        cam = GradCAM(model=model, target_layers=target_layers, use_cuda=torch.cuda.is_available())
+        cam = GradCAM(model=model, target_layers=target_layers) 
         targets = [ClassifierOutputTarget(label.item()) for label in labels[:5]] # For top 5 samples
 
         for i in range(min(5, len(images))):
