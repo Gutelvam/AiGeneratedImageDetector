@@ -25,8 +25,7 @@ The project will involve data acquisition and processing, model development (CNN
 - `requirements.txt`: Python dependencies.
 - `main.py` or `train.py`: Main script to run the project.
 
-
-
+```
 .
 ├── readme.md
 ├── main.py                   # Main script to run the project
@@ -53,3 +52,4 @@ The project will involve data acquisition and processing, model development (CNN
 │   ├── grad_cam_cnn_resnet18_sample_0.png
 │   └── ...
 └── (Optional) app.py         # Streamlit or Flask app for demo
+```
