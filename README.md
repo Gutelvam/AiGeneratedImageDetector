@@ -25,6 +25,15 @@ The project will involve data acquisition and processing, model development (CNN
 - `requirements.txt`: Python dependencies.
 - `main.py` or `train.py`: Main script to run the project.
 
+# STEPS
+- 1 - create virtual enviroment
+ `python -m venv venv`
+- 2 - Activate virtual enviroment
+`source venv/bin/activate`
+- 3- Install dependences
+`pip install -r requirements.txt`
+
+
 ```
 .
 ├── readme.md
