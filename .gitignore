@@ -19,6 +19,8 @@ venv*/
 # Image files
 *.jpg
 *.jpeg
+*.png
+
 
 # IDE & Editor settings
 .vscode/
